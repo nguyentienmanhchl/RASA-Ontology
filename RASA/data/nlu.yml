@@ -1,0 +1,263 @@
+version: "3.1"
+
+nlu:
+- lookup: X
+  examples: |
+    - lễ hội
+    - con người
+    - di tích lịch sử văn hóa
+    - đơn vị hành chính
+    - di tích khảo cổ
+    - kiến trúc thành quách
+    - vua
+- lookup: object
+  examples: |
+    - Quảng Ninh
+    - Hà Nội
+    - tháng 2 Âm lịch
+    - Huế
+    - Ái Châu
+    - Sơn Tây
+    - cuối tháng 3 Âm lịch
+    - 3/2 Âm lịch
+    - quần thể di tích Cố đô Huế
+    - Thanh Hóa
+    - 3000 năm
+    - Dương Bình Vương
+    - NgoDynasty
+    - 830
+    - 1930-12-11
+    - 1910-07-10
+    - 1930-09-08
+    - 0907-07-23
+    - 1998-07-14
+    - 1996-12-24
+    - 2011-07-23
+    - tháng 2 Âm lịch
+    - An Dương Vương
+    - năm 1805
+    - Ái Châu
+    - Đàn đá Bình Đa
+    - Kinh thành Huế
+    - Cổ Loa Citadel
+    - Điện Long An
+    - Lễ hội Bạch Đằng
+    - Lễ hội đền Đức Ông 
+    - Khúc Thừa Dụ
+    - Ngô Quyền
+    - Nguyễn Ngọc Loan
+    - Trần Anh Tông
+
+- lookup: predicate
+  examples: |
+    - sinh tại
+    - bắt đầu vào
+    - kết thúc vào
+    - nằm trong
+    - có niên đại
+    - có người kế vị là
+    - ở thời kỳ là
+    - trị vì
+    - sinh vào
+    - mất vào
+    - diễn ra vào
+    - được xây dựng bởi
+    - được xây dựng vào
+    - giữ chức vụ
+    - được tổ chức tại
+
+- lookup: citadel
+  examples: |
+    - Co Loa
+
+- intent: mood_great
+  examples: | 
+    - Cố lên
+    - bạn làm được
+    - chắc chắn được
+
+- intent: greet
+  examples: |
+    - chào em
+    - hello em
+    - hi em
+    - em ơi, cho anh hỏi
+    - bot ơi
+    - cho mình hỏi chút
+
+
+- intent: goodbye
+  examples: |
+    - good bye
+    - bye bye
+    - tạm biệt em
+    - tạm biệt bot nhá
+
+- intent: ask_ability
+  examples: |
+    - em có thể làm những gì nhỉ
+    - em có chức năng gì?
+    - em giúp gì được anh không?
+    - em có thể giúp gì cho anh?
+    - em biết làm gì?
+    - em hỗ trợ anh như thế nào?
+    - cho anh xem các chức năng của em
+
+- intent: thankyou
+  examples: |
+    - cảm ơn em nhá
+    - thanks em nha
+    - cảm ơn nha
+    - good job
+    - thank you
+    - cảm ơn bot nha
+    - thanks bot
+    - cảm ơn
+    - thank you so much
+    - great! Thanks
+
+- intent: praise
+  examples: |
+    - bot giỏi quá
+    - great
+    - awesome
+    - bot làm tốt lắm
+    - ui giỏi thế
+    - bot thông minh
+- intent: decry
+  examples: |
+    - quá tệ
+    - ngu ngốc
+    - chả biết gì cả
+    - dở ghê
+    - có thế mà cũng không biết
+    - kém cói
+
+- intent: ask_for_lunch
+  examples: |
+    - trưa nay anh nên ăn gì nhỉ
+    - trưa nay ăn gì bây giờ nhỉ
+    - chọn giúp t bữa trưa phát
+    - ăn trưa nào
+    - tiểu nhị, chọn món
+    - bữa trưa
+    - ăn gì bây giờ
+    - chọn giúp anh một quán ăn
+
+
+- intent: ask_person
+  examples: |
+    - [con người]{"entity":"X"} nào [mất vào]{"entity":"predicate"} [0907-07-23]{"entity":"object"}?
+    - [con người]{"entity":"X"} nào [sinh vào]{"entity":"predicate"} [830]{"entity":"object"}?
+    - [con người]{"entity":"X"} nào [ở thời kỳ là]{"entity":"predicate"} [NgoDynasty]{"entity":"object"}?
+    - [con người]{"entity":"X"} nào [giữ chức vụ]{"entity":"predicate"} [King Ngô Quyền]{"entity":"object"}?
+    - [con người]{"entity":"X"} nào [có người kế vị là]{"entity":"predicate"} [Dương Bình Vương]{"entity":"object"}?
+    - [con người]{"entity":"X"} nào [sinh tại]{"entity":"predicate"} [Huế]{"entity":"object"}?
+
+- intent: ask_person_2
+  examples: |
+    - [con người]{"entity":"X"} nào [mất vào]{"entity":"predicate"} [0907-07-23]{"entity":"object"} và [sinh vào]{"entity":"predicate"} [830]{"entity":"object"} ?
+    - [con người]{"entity":"X"} nào [sinh vào]{"entity":"predicate"} [830]{"entity":"object"} và [mất vào]{"entity":"predicate"} [0907-07-23]{"entity":"object"} ?
+    - [con người]{"entity":"X"} nào [ở thời kỳ là]{"entity":"predicate"} [NgoDynasty]{"entity":"object"} và [giữ chức vụ]{"entity":"predicate"} [King Ngô Quyền]{"entity":"object"} ?
+    - [con người]{"entity":"X"} nào [ở thời kỳ là]{"entity":"predicate"} [NgoDynasty]{"entity":"object"} và [có người kế vị là]{"entity":"predicate"} [Dương Bình Vương]{"entity":"object"} ?
+    - [con người]{"entity":"X"} nào [giữ chức vụ]{"entity":"predicate"} [King Ngô Quyền]{"entity":"object"} và [ở thời kỳ là]{"entity":"predicate"} [NgoDynasty]{"entity":"object"} ?
+    - [con người]{"entity":"X"} nào [giữ chức vụ]{"entity":"predicate"} [King Ngô Quyền]{"entity":"object"} và [có người kế vị là]{"entity":"predicate"} [Dương Bình Vương]{"entity":"object"} ?
+    - [con người]{"entity":"X"} nào [có người kế vị là]{"entity":"predicate"} [Dương Bình Vương]{"entity":"object"} và [ở thời kỳ là]{"entity":"predicate"} [NgoDynasty]{"entity":"object"} ?
+    - [con người]{"entity":"X"} nào [có người kế vị là]{"entity":"predicate"} [Dương Bình Vương]{"entity":"object"} và [giữ chức vụ]{"entity":"predicate"} [King Ngô Quyền]{"entity":"object"} ?
+
+- intent: ask_festival
+  examples: |
+    - [lễ hội]{"entity":"X"} nào [được tổ chức tại]{"entity":"predicate"} [Quảng Ninh]{"entity":"object"}?
+    - [lễ hội]{"entity":"X"} nào [diễn ra vào]{"entity":"predicate"} [tháng 2 Âm lịch]{"entity":"object"}?
+    - [lễ hội]{"entity":"X"} nào [bắt đầu vào]{"entity":"predicate"} [3/2 Âm lịch]{"entity":"object"}?
+    - [lễ hội]{"entity":"X"} nào [kết thúc vào]{"entity":"predicate"} [cuối tháng 3 Âm lịch]{"entity":"object"}?
+
+
+
+- intent: ask_festival_2
+  examples: |
+    - [lễ hội]{"entity":"X"} nào [diễn ra vào]{"entity":"predicate"} [tháng 2 Âm lịch]{"entity":"object"} và [bắt đầu vào]{"entity":"predicate"} [3/2 Âm lịch]{"entity":"object"} ?
+    - [lễ hội]{"entity":"X"} nào [diễn ra vào]{"entity":"predicate"} [tháng 2 Âm lịch]{"entity":"object"} và [kết thúc vào]{"entity":"predicate"} [cuối tháng 3 Âm lịch]{"entity":"object"} ?
+    - [lễ hội]{"entity":"X"} nào [bắt đầu vào]{"entity":"predicate"} [3/2 Âm lịch]{"entity":"object"} và [diễn ra vào]{"entity":"predicate"} [tháng 2 Âm lịch]{"entity":"object"} ?
+    - [lễ hội]{"entity":"X"} nào [bắt đầu vào]{"entity":"predicate"} [3/2 Âm lịch]{"entity":"object"} và [kết thúc vào]{"entity":"predicate"} [cuối tháng 3 Âm lịch]{"entity":"object"} ?
+    - [lễ hội]{"entity":"X"} nào [kết thúc vào]{"entity":"predicate"} [cuối tháng 3 Âm lịch]{"entity":"object"} và [diễn ra vào]{"entity":"predicate"} [tháng 2 Âm lịch]{"entity":"object"} ?
+    - [lễ hội]{"entity":"X"} nào [kết thúc vào]{"entity":"predicate"} [cuối tháng 3 Âm lịch]{"entity":"object"} và [bắt đầu vào]{"entity":"predicate"} [3/2 Âm lịch]{"entity":"object"} ?
+    - [lễ hội]{"entity":"X"} nào [kết thúc vào]{"entity":"predicate"} [cuối tháng 3 Âm lịch]{"entity":"object"} và [được tổ chức tại]{"entity":"predicate"} [Quảng Ninh]{"entity":"object"} ?
+    - [lễ hội]{"entity":"X"} nào [bắt đầu vào]{"entity":"predicate"} [3/2 Âm lịch]{"entity":"object"} và [được tổ chức tại]{"entity":"predicate"} [Quảng Ninh]{"entity":"object"} ?
+    - [lễ hội]{"entity":"X"} nào [diễn ra vào]{"entity":"predicate"} [tháng 2 Âm lịch]{"entity":"object"} và [được tổ chức tại]{"entity":"predicate"} [Quảng Ninh]{"entity":"object"} ?
+    
+- intent: ask_administrative_division
+  examples: |
+    - [đơn vị hành chính]{"entity":"X"} nào [nằm trong]{"entity":"predicate"} [Thanh Hóa]{"entity":"object"}?
+    - [đơn vị hành chính]{"entity":"X"} gì [nằm trong]{"entity":"predicate"} tỉnh [Thanh Hóa]{"entity":"object"}?
+
+
+- intent: ask_archaeological_historical_site
+  examples: |
+    - [di tích khảo cổ]{"entity":"X"} nào [có niên đại]{"entity":"predicate"} [3000 năm]{"entity":"object"}?
+    - Tìm [di tích khảo cổ]{"entity":"X"} [có niên đại]{"entity":"predicate"} [3000 năm]{"entity":"object"}?
+
+
+- intent: ask_citadel_architecture
+  examples: |
+    - [kiến trúc thành quách]{"entity":"X"} nào [được xây dựng vào]{"entity":"predicate"} [năm 1805]{"entity":"object"}?
+    - [kiến trúc thành quách]{"entity":"X"} nào [ở thời kỳ là]{"entity":"predicate"} [NgoDynasty]{"entity":"object"}?
+    - [kiến trúc thành quách]{"entity":"X"} nào [được chọn làm thủ đô bởi]{"entity":"predicate"} [Ngô Quyền]{"entity":"object"}?
+    - [kiến trúc thành quách]{"entity":"X"} nào [được xây dựng bởi]{"entity":"predicate"} [An Dương Vương]{"entity":"object"}?
+
+
+- intent: ask_citadel_architecture_2
+  examples: |
+    - [kiến trúc thành quách]{"entity":"X"} nào [ở thời kỳ là]{"entity":"predicate"} [NgoDynasty]{"entity":"object"} và [được chọn làm thủ đô bởi]{"entity":"predicate"} [Ngô Quyền]{"entity":"object"} ?
+    - [kiến trúc thành quách]{"entity":"X"} nào [ở thời kỳ là]{"entity":"predicate"} [NgoDynasty]{"entity":"object"} và [được xây dựng bởi]{"entity":"predicate"} [An Dương Vương]{"entity":"object"} ?
+    - [kiến trúc thành quách]{"entity":"X"} nào [được chọn làm thủ đô bởi]{"entity":"predicate"} [Ngô Quyền]{"entity":"object"} và [ở thời kỳ là]{"entity":"predicate"} [NgoDynasty]{"entity":"object"} ?
+    - [kiến trúc thành quách]{"entity":"X"} nào [được chọn làm thủ đô bởi]{"entity":"predicate"} [Ngô Quyền]{"entity":"object"} và [được xây dựng bởi]{"entity":"predicate"} [An Dương Vương]{"entity":"object"} ?
+    - [kiến trúc thành quách]{"entity":"X"} nào [được xây dựng bởi]{"entity":"predicate"} [An Dương Vương]{"entity":"object"} và [ở thời kỳ là]{"entity":"predicate"} [NgoDynasty]{"entity":"object"} ?
+    - [kiến trúc thành quách]{"entity":"X"} nào [được xây dựng bởi]{"entity":"predicate"} [An Dương Vương]{"entity":"object"} và [được chọn làm thủ đô bởi]{"entity":"predicate"} [Ngô Quyền]{"entity":"object"} ?
+   
+
+- intent: ask_cultural_historical_site
+  examples: |
+    - [di tích lịch sử văn hóa]{"entity":"X"} nào [nằm trong]{"entity":"predicate"} [quần thể di tích Cố đô Huế]{"entity":"object"}?
+    - [nằm trong]{"entity":"predicate"} [quần thể di tích Cố đô Huế]{"entity":"object"} có [di tích lịch sử văn hóa]{"entity":"X"} nào?
+
+- intent: ask_about_administrative_division
+  examples: |
+    - [Ái Châu]{"entity":"object"}  [nằm trong]{"entity":"predicate"} ?
+    - [Ái Châu]{"entity":"object"}  [nằm trong]{"entity":"predicate"} nơi nào?
+
+- intent: ask_about_archaeological_historical_site
+  examples: |
+    - [Đàn đá Bình Đa]{"entity":"object"}  [có niên đại]{"entity":"predicate"} ?
+    - [Đàn đá Bình Đa]{"entity":"object"}  [có niên đại]{"entity":"predicate"} bao lâu?
+
+- intent: ask_about_citadel_architecture
+  examples: |
+    - [Kinh thành Huế]{"entity":"object"}  [được xây dựng vào]{"entity":"predicate"} ?
+    - [Cổ Loa Citadel]{"entity":"object"}  [ở thời kỳ là]{"entity":"predicate"} ?
+    - [Cổ Loa Citadel]{"entity":"object"}  [được chọn làm thủ đô bởi]{"entity":"predicate"} ?
+    - [Cổ Loa Citadel]{"entity":"object"}  [được xây dựng bởi]{"entity":"predicate"} ?
+
+- intent: ask_about_cultural_historical_site
+  examples: |
+    - [Điện Long An]{"entity":"object"}  [nằm trong]{"entity":"predicate"} ?
+    - [Điện Long An]{"entity":"object"}  [nằm trong]{"entity":"predicate"} nơi nào?
+
+- intent: ask_about_festival
+  examples: |
+    - [Lễ hội Bạch Đằng]{"entity":"object"}  [được tổ chức tại]{"entity":"predicate"} ?
+    - [Lễ hội đền Đức Ông]{"entity":"object"}  [diễn ra vào]{"entity":"predicate"} ?
+    - [Lễ hội đền Đức Ông]{"entity":"object"}  [bắt đầu vào]{"entity":"predicate"} ?
+    - [Lễ hội đền Đức Ông]{"entity":"object"}  [kết thúc vào]{"entity":"predicate"} ?
+
+- intent: ask_about_person
+  examples: |
+    - [Khúc Thừa Dụ]{"entity":"object"}  [mất vào]{"entity":"predicate"} ?
+    - [Khúc Thừa Dụ]{"entity":"object"}  [sinh vào]{"entity":"predicate"} ?
+    - [Ngô Quyền]{"entity":"object"}  [ở thời kỳ là]{"entity":"predicate"} ?
+    - [Ngô Quyền]{"entity":"object"}  [giữ chức vụ]{"entity":"predicate"} ?
+    - [Ngô Quyền]{"entity":"object"}  [có người kế vị là]{"entity":"predicate"} ?
+    - [Nguyễn Ngọc Loan]{"entity":"object"}  [sinh tại]{"entity":"predicate"} ?
+    - [Trần Anh Tông]{"entity":"object"}  [sinh vào]{"entity":"predicate"} ?
+
+
