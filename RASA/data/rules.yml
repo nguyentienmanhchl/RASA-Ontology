@@ -1,0 +1,92 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+- rule: ask festival
+  steps:
+  - intent: ask_festival
+  - action: action_one_condition
+
+- rule: ask person
+  steps:
+  - intent: ask_person
+  - action: action_one_condition
+
+- rule: ask administrative division
+  steps:
+  - intent: ask_administrative_division
+  - action: action_one_condition
+
+- rule: ask archaeological historical site
+  steps:
+  - intent: ask_archaeological_historical_site
+  - action: action_one_condition
+
+- rule: ask citadel architecture
+  steps:
+  - intent: ask_citadel_architecture
+  - action: action_one_condition
+
+- rule: ask cultural historical site
+  steps:
+  - intent: ask_cultural_historical_site
+  - action: action_one_condition
+
+- rule: ask festival 2
+  steps:
+  - intent: ask_festival_2
+  - action: action_two_conditions
+
+- rule: ask person 2
+  steps:
+  - intent: ask_person_2
+  - action: action_two_conditions
+
+- rule: ask citadel architecture 2
+  steps:
+  - intent: ask_citadel_architecture_2
+  - action: action_two_conditions
+
+  
+- rule: ask about administrative division
+  steps:
+  - intent: ask_about_administrative_division
+  - action: action_ask_one_property
+
+- rule: ask about archaeological historical site
+  steps:
+  - intent: ask_about_archaeological_historical_site
+  - action: action_ask_one_property
+
+- rule: ask about citadel architecture
+  steps:
+  - intent: ask_about_citadel_architecture
+  - action: action_ask_one_property
+
+- rule: ask about cultural historical site
+  steps:
+  - intent: ask_about_cultural_historical_site
+  - action: action_ask_one_property
+
+- rule: ask about festival
+  steps:
+  - intent: ask_about_festival
+  - action: action_ask_one_property
+
+- rule: ask_about_person
+  steps:
+  - intent: ask_about_person
+  - action: action_ask_one_property
+
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_please_rephrase
+
+
