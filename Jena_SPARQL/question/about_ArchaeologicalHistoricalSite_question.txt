@@ -1,1 +1,0 @@
-    - [Đàn đá Bình Đa]{"entity":"object"}  [có niên đại]{"entity":"predicate"} ?
